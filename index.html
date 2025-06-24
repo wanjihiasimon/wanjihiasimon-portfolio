@@ -64,25 +64,42 @@
     .hobbies-list {
       list-style: none;
       padding: 0;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 20px;
     }
     .portfolio-card {
+      position: relative;
       display: block;
-      width: 100%;
-      max-width: 300px;
+      height: 320px;
       background-size: cover;
       background-position: center;
       border-radius: 12px;
       overflow: hidden;
       color: #fff;
       text-decoration: none;
-      position: relative;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
     }
     .card-content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 15px;
+    }
+    .card-subtitle {
+      font-weight: bold;
+      font-size: 1rem;
+      color: #ffa500;
+    }
+    .card-title {
+      margin-top: 5px;
+      font-size: 0.95rem;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -221,7 +238,7 @@
         </div>
       </section><BR><BR>
   <!-- hobbies -->    
-          <section class="section hobbies" id="hobbies">
+      <section class="section hobbies" id="hobbies">
     <div class="container">
       <p class="section-subtitle">Hobbies</p>
       <ul class="hobbies-list">
@@ -229,7 +246,7 @@
           <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
             <div class="card-content">
               <p class="card-subtitle">PicoCTF Player</p>
-              <h5 class="h3 card-title">
+              <h5 class="card-title">
                 I find joy in participating in PicoCTF challenges to build my knowledge of vulnerabilities, cyber threats, and ethical hacking practices.
               </h5>
             </div>
@@ -239,6 +256,9 @@
           <a href="#" class="portfolio-card" style="background-image: url('./assets/images/travel.png')">
             <div class="card-content">
               <p class="card-subtitle">Travelling</p>
+              <h5 class="card-title">
+                Exploring new destinations broadens my perspective, boosts creativity, and fosters cultural appreciation.
+              </h5>
             </div>
           </a>
         </li>
@@ -246,7 +266,7 @@
           <a href="https://overthewire.org/wargames/" target="_blank" class="portfolio-card" style="background-image: url('./assets/images/overthewire.jpg')">
             <div class="card-content">
               <p class="card-subtitle">OverTheWire Wargames</p>
-              <h5 class="h3 card-title">
+              <h5 class="card-title">
                 I enjoy solving OverTheWire wargames to improve my Linux skills, binary exploitation, and cybersecurity awareness.
               </h5>
             </div>
