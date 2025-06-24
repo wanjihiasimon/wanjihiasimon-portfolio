@@ -2,11 +2,55 @@
 <html lang="en">
 
 <head>
-  <style>
-  .navbar-link {
-    color: orange !important;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simon Wanjihia - Cybersecurity analyst, IT auditor, and developer skilled in web development, machine learning, and SOC monitoring. Projects in Spring Boot, Flask, and UIPath.">
+  <meta name="keywords" content="Cybersecurity, IT Audit, SOC Analyst, Penetration Testing, Machine Learning, Flask, Spring Boot, UiPath, Simon Wanjihia">
+  <meta name="author" content="Simon Wanjihia">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Simon Wanjihia | Cybersecurity & IT Audit Professional">
+  <meta property="og:description" content="Explore Simon’s portfolio in cybersecurity, machine learning, web development, and IT auditing.">
+  <meta property="og:image" content="./assets/images/simon.jpg">
+  <meta property="og:url" content="https://your-website-link.com">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Simon Wanjihia | Cybersecurity & IT Audit Professional">
+  <meta name="twitter:description" content="Explore Simon’s work in ML, cybersecurity, and system administration.">
+  <meta name="twitter:image" content="./assets/images/simon.jpg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Simon Wanjihia",
+    "jobTitle": "Cybersecurity Analyst & IT Auditor",
+    "url": "https://your-website-link.com",
+    "sameAs": [
+      "https://linkedin.com/in/yourprofile",
+      "https://github.com/yourprofile"
+    ],
+    "image": "https://your-website-link.com/assets/images/simon.jpg",
+    "description": "Cybersecurity and machine learning developer with experience in SOC monitoring, penetration testing, and IT audits.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Kenya"
+    }
   }
-  .navbar-list {
+  </script>
+
+  <title>Njoroge Simon Wanjihia</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" href="data:,">
+
+  <style>
+    .navbar-link {
+      color: orange !important;
+    }
+    .navbar-list {
       background-color: white;
       padding: 10px 20px;
       border-radius: 8px;
@@ -17,14 +61,30 @@
       display: inline-block;
       margin: 0 10px;
     }
-</style>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Njoroge Simon Wanjihia</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="icon" href="data:,">
+    .hobbies-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .portfolio-card {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      overflow: hidden;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+    }
+    .card-content {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -161,29 +221,41 @@
         </div>
       </section><BR><BR>
   <!-- hobbies -->    
-            <li>
-              <p class="section-subtitle">Hobbies</p>
-              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
-                <div class="card-content">
-                  <p class="card-subtitle">PicoCTF Player</p>
-                  <h5 class="h3 card-title">
-                    I find joy in participating in PicoCTF challenges to build my knowledge of vulnerabilities, cyber threats, and ethical hacking practices.
-                  </h5>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
-           <li>
-              <p class="section-subtitle">Hobbies</p>
-              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/travel.png')">
-                <div class="card-content">
-                  <p class="card-subtitle">Travelling</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-        </div>
+          <section class="section hobbies" id="hobbies">
+    <div class="container">
+      <p class="section-subtitle">Hobbies</p>
+      <ul class="hobbies-list">
+        <li>
+          <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
+            <div class="card-content">
+              <p class="card-subtitle">PicoCTF Player</p>
+              <h5 class="h3 card-title">
+                I find joy in participating in PicoCTF challenges to build my knowledge of vulnerabilities, cyber threats, and ethical hacking practices.
+              </h5>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="portfolio-card" style="background-image: url('./assets/images/travel.png')">
+            <div class="card-content">
+              <p class="card-subtitle">Travelling</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="https://overthewire.org/wargames/" target="_blank" class="portfolio-card" style="background-image: url('./assets/images/overthewire.jpg')">
+            <div class="card-content">
+              <p class="card-subtitle">OverTheWire Wargames</p>
+              <h5 class="h3 card-title">
+                I enjoy solving OverTheWire wargames to improve my Linux skills, binary exploitation, and cybersecurity awareness.
+              </h5>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
       <!-- SKILLS -->
       <section class="section skills" id="skills">
         <div class="container">
