@@ -136,25 +136,54 @@
   font-weight: 600;
   text-decoration: none;
 }
-.education .projects-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+/* EDUCATION COLLAPSIBLE */
+.education-row {
+  display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .education .projects-list {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.education-card {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 15px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-  .education .projects-list {
-    grid-template-columns: 1fr;
-  }
+.education-card summary {
+  list-style: none;
+  cursor: pointer;
 }
+
+.education-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.education-card summary h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.education-card summary span {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.education-card[open] {
+  border-left: 5px solid orange;
+}
+
+.education-content {
+  margin-top: 15px;
+}
+
+.education-content h4 {
+  margin-top: 12px;
+  font-size: 1rem;
+}
+
 
   </style>
 </head>
@@ -225,109 +254,90 @@
         </div>
       </section>
 
-      <!-- EDUCATION -->
+  <!-- EDUCATION -->
 <section class="section education" id="education">
   <div class="container">
     <p class="section-subtitle">Education & Training</p>
     <h2 class="h2 section-title">Academic & Professional Development</h2>
 
-    <div class="projects-list">
+    <div class="education-row">
 
       <!-- Cyber Shujaa -->
-      <div class="project-card">
-        <h3 class="project-title">Cybersecurity Analyst Trainee</h3>
-        <p class="project-tech">
-          <strong>Cyber Shujaa</strong> — Nairobi, Kenya<br>
-          <strong>Duration:</strong> 13 January 2026 – Present
-        </p>
+      <details class="education-card">
+        <summary>
+          <h3>Cybersecurity Analyst Trainee</h3>
+          <span>Cyber Shujaa · Jan 2026 – Present</span>
+        </summary>
 
-        <h4>Technical Skills & Training</h4>
-        <ul>
-          <li>Cyber Shujaa 2026 Cohort 1 trainee (Led by Serianu Ltd, USIU-Africa & Kenya Bankers Association)</li>
-          <li>Hands-on security labs across Windows, Linux, web, network, wireless, and cloud environments</li>
-          <li>Reconnaissance, OSINT, scanning, enumeration, and vulnerability analysis</li>
-          <li>SOC operations: incident detection, SIEM monitoring, threat intelligence, incident response</li>
-          <li>Digital forensics, malware analysis, and security reporting</li>
-          <li>Structured lab documentation and security assessment reports</li>
-        </ul>
+        <div class="education-content">
+          <p><strong>Location:</strong> Nairobi, Kenya</p>
 
-        <h4>Cybersecurity Tools & Technologies</h4>
-        <ul>
-          <li>Kali Linux, Nmap, Burp Suite, Wireshark, Metasploit</li>
-          <li>SIEM platforms (log analysis & detection)</li>
-          <li>OSINT tools</li>
-          <li>Hack The Box & TryHackMe labs</li>
-        </ul>
+          <h4>Technical Skills & Training</h4>
+          <ul>
+            <li>Hands-on security labs across Windows, Linux, web, network, wireless, and cloud</li>
+            <li>Reconnaissance, OSINT, vulnerability scanning & enumeration</li>
+            <li>SOC operations: SIEM monitoring, threat intelligence & incident response</li>
+            <li>Digital forensics, malware analysis & security reporting</li>
+          </ul>
 
-        <h4>Professional & Soft Skills</h4>
-        <ul>
-          <li>Technical & executive communication</li>
-          <li>CV writing, portfolio development & LinkedIn branding</li>
-          <li>Interviewing & negotiation skills</li>
-          <li>Critical thinking, teamwork & problem-solving</li>
-          <li>Time management, ethics & professionalism</li>
-        </ul>
-      </div>
+          <h4>Tools & Platforms</h4>
+          <ul>
+            <li>Kali Linux, Nmap, Burp Suite, Wireshark, Metasploit</li>
+            <li>SIEM platforms, OSINT tools</li>
+            <li>Hack The Box & TryHackMe</li>
+          </ul>
+
+          <h4>Professional Skills</h4>
+          <ul>
+            <li>Technical communication & reporting</li>
+            <li>CV, portfolio & LinkedIn branding</li>
+            <li>Critical thinking, teamwork & ethics</li>
+          </ul>
+        </div>
+      </details>
 
       <!-- KCA University -->
-      <div class="project-card">
-        <h3 class="project-title">Enterprise Networking, Security & Automation</h3>
-        <p class="project-tech">
-          <strong>KCA University</strong> — Nairobi, Kenya<br>
-          <strong>Duration:</strong> September 2025 – Present
-        </p>
+      <details class="education-card">
+        <summary>
+          <h3>Enterprise Networking, Security & Automation</h3>
+          <span>KCA University · Sep 2025 – Present</span>
+        </summary>
 
-        <ul>
-          <li>Networking fundamentals: OSI/TCP-IP, IPv4/IPv6, subnetting</li>
-          <li>Switching: VLANs, trunking, STP, EtherChannel</li>
-          <li>Routing: Static & dynamic routing, OSPF, EIGRP, HSRP/VRRP/GLBP</li>
-          <li>IP Services: NAT, DHCP, DNS, NTP, QoS, Syslog, SNMP</li>
-          <li>Security: ACLs, port security, VPN basics, device hardening, AAA</li>
-          <li>Wireless: WLANs, WPA/WPA2, AP vs WLC</li>
-          <li>Automation & Programmability: REST APIs, JSON, Python, SDN</li>
-          <li>Hands-on labs using Cisco Packet Tracer and enterprise simulations</li>
-        </ul>
-      </div>
+        <div class="education-content">
+          <ul>
+            <li>OSI/TCP-IP, IPv4/IPv6, subnetting</li>
+            <li>VLANs, STP, EtherChannel</li>
+            <li>Routing: OSPF, EIGRP, HSRP/VRRP</li>
+            <li>NAT, DHCP, DNS, SNMP, Syslog</li>
+            <li>ACLs, VPNs, AAA authentication</li>
+            <li>REST APIs, Python, SDN</li>
+            <li>Cisco Packet Tracer enterprise labs</li>
+          </ul>
+        </div>
+      </details>
 
       <!-- Degree -->
-      <div class="project-card">
-        <h3 class="project-title">BSc. Business Information Technology</h3>
-        <p class="project-tech">
-          <strong>Dedan Kimathi University of Technology</strong> — Nyeri, Kenya<br>
-          <strong>GPA:</strong> Second Class (Upper Division)
-        </p>
+      <details class="education-card">
+        <summary>
+          <h3>BSc. Business Information Technology</h3>
+          <span>Dedan Kimathi University · Second Class Upper</span>
+        </summary>
 
-        <ul>
-          <li>Programming & automation: Python, Java, scripting</li>
-          <li>Database systems: SQL, PL/SQL, data modeling</li>
-          <li>Computer networks (CCNA-aligned)</li>
-          <li>Linux system administration & shell scripting</li>
-          <li>Cybersecurity fundamentals & access management</li>
-          <li>Data analytics, statistics & visualization</li>
-          <li>Business systems, accounting, taxation, HCI & business law</li>
-        </ul>
-      </div>
-
-      <!-- Certifications -->
-      <div class="project-card">
-        <h3 class="project-title">Certifications</h3>
-        <ul>
-          <li>CCNA: Computer Networks – Cisco Networking Academy</li>
-          <li>CCNA: Switching, Routing & Wireless Essentials</li>
-          <li>Computer Hardware – Cisco Networking Academy</li>
-          <li>Endpoint Security</li>
-          <li>Linux Essentials</li>
-          <li>Introduction to Cybersecurity</li>
-          <li>Python Essentials</li>
-          <li>Operating System Basics</li>
-          <li>IBM Software Development</li>
-        </ul>
-      </div>
+        <div class="education-content">
+          <ul>
+            <li>Python, Java, system automation</li>
+            <li>SQL, PL/SQL, database design</li>
+            <li>Linux administration & scripting</li>
+            <li>Cybersecurity fundamentals</li>
+            <li>Data analytics & visualization</li>
+            <li>Business systems & IT governance</li>
+          </ul>
+        </div>
+      </details>
 
     </div>
   </div>
 </section>
-
 
        <!-- Portfolio -->
   <p class="section-subtitle">Experience</p>
