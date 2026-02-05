@@ -183,6 +183,49 @@
   margin-top: 12px;
   font-size: 1rem;
 }
+/* CERTIFICATIONS COLLAPSIBLE */
+.certification-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.certification-card {
+  flex: 1 1 calc(33.333% - 20px);
+  min-width: 280px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 15px;
+}
+
+.certification-card summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.certification-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.certification-card summary h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.certification-card summary span {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.certification-card[open] {
+  border-left: 5px solid orange;
+}
+
+.certification-card ul {
+  margin-top: 12px;
+  padding-left: 18px;
+}
 
 
   </style>
@@ -201,6 +244,7 @@
           <li><a href="#home" class="navbar-link" data-nav-link>Home</a></li>
           <li><a href="#about" class="navbar-link" data-nav-link>About</a></li>
           <li><a href="#education" class="navbar-link" data-nav-link>Education</a></li>
+          <li><a href="#certifications" class="navbar-link" data-nav-link>Certifications</a></li>
           <li><a href="#portfolio" class="navbar-link" data-nav-link>Experience</a></li>
           <li><a href="#skills" class="navbar-link" data-nav-link>Skills</a></li>
           <li><a href="#projects" class="navbar-link" data-nav-link>projects</a></li>
@@ -333,6 +377,54 @@
             <li>Business systems & IT governance</li>
           </ul>
         </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+      <!-- CERTIFICATIONS -->
+<section class="section certifications" id="certifications">
+  <div class="container">
+    <p class="section-subtitle">Certifications</p>
+    <h2 class="h2 section-title">Professional Certifications</h2>
+
+    <div class="certification-row">
+
+      <details class="certification-card">
+        <summary>
+          <h3>Networking & Infrastructure</h3>
+          <span>Click to view certifications</span>
+        </summary>
+        <ul>
+          <li>CCNA: Computer Networks – Cisco Networking Academy</li>
+          <li>CCNA: Switching, Routing & Wireless Essentials</li>
+          <li>Computer Hardware – Cisco Networking Academy</li>
+        </ul>
+      </details>
+
+      <details class="certification-card">
+        <summary>
+          <h3>Cybersecurity</h3>
+          <span>Click to view certifications</span>
+        </summary>
+        <ul>
+          <li>Endpoint Security</li>
+          <li>Introduction to Cybersecurity</li>
+          <li>Operating System Basics</li>
+          <li>Linux Essentials</li>
+        </ul>
+      </details>
+
+      <details class="certification-card">
+        <summary>
+          <h3>Programming & Software</h3>
+          <span>Click to view certifications</span>
+        </summary>
+        <ul>
+          <li>Python Essentials</li>
+          <li>IBM Software Development</li>
+        </ul>
       </details>
 
     </div>
