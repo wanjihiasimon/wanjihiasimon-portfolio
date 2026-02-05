@@ -136,6 +136,25 @@
   font-weight: 600;
   text-decoration: none;
 }
+.education .projects-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 20px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .education .projects-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .education .projects-list {
+    grid-template-columns: 1fr;
+  }
+}
 
   </style>
 </head>
