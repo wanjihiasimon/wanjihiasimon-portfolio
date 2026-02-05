@@ -183,50 +183,30 @@
   margin-top: 12px;
   font-size: 1rem;
 }
-/* CERTIFICATIONS COLLAPSIBLE */
-.certification-row {
+/* CERTIFICATIONS ROW (NON-COLLAPSIBLE) */
+/* Lab badges inside always-visible card */
+.lab-badges {
   display: flex;
   gap: 20px;
-  flex-wrap: wrap;
+  margin-top: 15px;
 }
 
-.certification-card {
-  flex: 1 1 calc(33.333% - 20px);
-  min-width: 280px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  padding: 15px;
+.lab-badge {
+  width: 90px;
+  height: auto;
+  transition: transform 0.25s ease;
 }
 
-.certification-card summary {
-  list-style: none;
+.lab-badge:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 
-.certification-card summary::-webkit-details-marker {
-  display: none;
+/* Highlight for Labs card */
+.certification-card.highlight {
+  border-left: 4px solid orange;
+  padding: 15px;
 }
-
-.certification-card summary h3 {
-  margin: 0;
-  font-size: 1.1rem;
-}
-
-.certification-card summary span {
-  font-size: 0.85rem;
-  color: #666;
-}
-
-.certification-card[open] {
-  border-left: 5px solid orange;
-}
-
-.certification-card ul {
-  margin-top: 12px;
-  padding-left: 18px;
-}
-
 
   </style>
 </head>
@@ -387,10 +367,11 @@
 <section class="section certifications" id="certifications">
   <div class="container">
     <p class="section-subtitle">Certifications</p>
-    <h2 class="h2 section-title">Professional Certifications</h2>
+    <h2 class="h2 section-title">Professional Certifications & Labs</h2>
 
     <div class="certification-row">
 
+      <!-- Networking & Infrastructure -->
       <details class="certification-card">
         <summary>
           <h3>Networking & Infrastructure</h3>
@@ -403,6 +384,7 @@
         </ul>
       </details>
 
+      <!-- Cybersecurity -->
       <details class="certification-card">
         <summary>
           <h3>Cybersecurity</h3>
@@ -416,6 +398,7 @@
         </ul>
       </details>
 
+      <!-- Programming & Software -->
       <details class="certification-card">
         <summary>
           <h3>Programming & Software</h3>
@@ -427,10 +410,29 @@
         </ul>
       </details>
 
+      <!-- Hands-on Labs (Always Visible, Not Collapsible) -->
+      <div class="certification-card highlight">
+        <h3>Hands-on Labs</h3>
+        <div class="lab-badges">
+          <a href="https://tryhackme.com/p/yourusername" target="_blank">
+            <img src="./assets/images/tryhackme-badge.png"
+                 alt="TryHackMe Badge"
+                 class="lab-badge">
+          </a>
+
+          <a href="https://www.hackthebox.eu/home/users/profile/yourid"
+             target="_blank">
+            <img src="./assets/images/hackthebox-badge.png"
+                 alt="Hack The Box Badge"
+                 class="lab-badge">
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
+      
        <!-- Portfolio -->
   <p class="section-subtitle">Experience</p>
       <section class="hero" id="portfolio">
