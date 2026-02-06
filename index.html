@@ -182,7 +182,7 @@
   margin-top: 12px;
   font-size: 1rem;
 }
-/* CERTIFICATIONS ROW (NON-COLLAPSIBLE) */
+/* CERTIFICATIONS ROW (COLLAPSIBLE) */
 /* Main row for the two cards */
 .certification-row {
   display: flex;
@@ -200,19 +200,21 @@
   box-sizing: border-box;
   background-color: #1e2139;
   border: 1px solid #2c2f4a;
-  padding: 20px;
   border-radius: 8px;
+  padding: 20px;
   color: #cfd8dc;
+  margin-bottom: 15px;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover effect for normal cards */
 .certification-card:hover {
   background-color: #353a57;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Highlight style for labs */
+/* Highlight style for labs card */
 .certification-card.highlight {
   background-color: #fffbf0;
   border-color: #ff9800;
@@ -221,8 +223,40 @@
   box-shadow: none;
 }
 
-.certification-card.highlight h3 {
-  margin-bottom: 12px;
+/* Header styling for collapsible cards */
+.certification-card summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.certification-card summary::-webkit-details-marker {
+  display: none; /* hide default arrow */
+}
+
+/* Custom arrow icon */
+.certification-card summary::before {
+  content: '▶';
+  margin-right: 12px;
+  transition: transform 0.25s ease;
+  color: #ff9800;
+}
+
+/* Rotate arrow when open */
+.certification-card[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* List styling inside cards */
+.certification-card ul {
+  margin-top: 12px;
+  padding-left: 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 /* Lab link style */
@@ -241,7 +275,7 @@
   text-decoration: underline;
 }
 
-/* Grid for TryHackMe labs */
+/* Grid for TryHackMe labs (3 labs per row) */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -261,7 +295,7 @@
   margin-bottom: 8px;
 }
 
-/* Responsive grid for smaller screens */
+/* Responsive grids */
 @media (max-width: 1024px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
@@ -276,6 +310,7 @@
     grid-template-columns: 1fr;
   }
 }
+
   </style>
 </head>
 <body id="top">
@@ -435,194 +470,52 @@
 
     <div class="certification-row">
 
+      <!-- Networking & Infrastructure -->
       <details class="certification-card">
         <summary>
           <h3>Networking & Infrastructure</h3>
           <span>Click to view certifications</span>
         </summary>
-        <ul>
-          <li>CCNA: Computer Networks – Cisco Networking Academy</li>
-          <li>CCNA: Switching, Routing & Wireless Essentials</li>
-          <li>Computer Hardware – Cisco Networking Academy</li>
-        </ul>
+        <div class="education-content">
+          <ul>
+            <li>CCNA: Computer Networks – Cisco Networking Academy</li>
+            <li>CCNA: Switching, Routing & Wireless Essentials</li>
+            <li>Computer Hardware – Cisco Networking Academy</li>
+          </ul>
+        </div>
       </details>
 
+      <!-- Cybersecurity -->
       <details class="certification-card">
         <summary>
           <h3>Cybersecurity</h3>
           <span>Click to view certifications</span>
         </summary>
-        <ul>
-          <li>Endpoint Security</li>
-          <li>Introduction to Cybersecurity</li>
-          <li>Operating System Basics</li>
-          <li>Linux Essentials</li>
-        </ul>
+        <div class="education-content">
+          <ul>
+            <li>Endpoint Security</li>
+            <li>Introduction to Cybersecurity</li>
+            <li>Operating System Basics</li>
+            <li>Linux Essentials</li>
+          </ul>
+        </div>
       </details>
 
+      <!-- Programming & Software -->
       <details class="certification-card">
         <summary>
           <h3>Programming & Software</h3>
           <span>Click to view certifications</span>
         </summary>
-        <ul>
-          <li>Python Essentials</li>
-          <li>IBM Software Development</li>
-        </ul>
+        <div class="education-content">
+          <ul>
+            <li>Python Essentials</li>
+            <li>IBM Software Development</li>
+          </ul>
+        </div>
       </details>
-<!-- Cybersecurity Labs & Hands-On Training -->
-<section id="labs">
-  <div class="container">
 
-    <!-- Hack The Box Labs -->
-    <div class="certification-card highlight lab-card">
-      <h3>Hack The Box Labs</h3>
-      <div class="lab-badges"></div>
-
-      <p>
-        Completed guided Hack The Box Academy labs covering web exploitation,
-        Linux fundamentals, networking, and penetration testing techniques.
-      </p>
-      <a href="https://academy.hackthebox.com/achievement/1345880/49"
-         target="_blank"
-         class="lab-link">
-        View Profile & Badges
-      </a>
-
-      <p>
-        Practiced hands-on offensive security skills through additional Hack The Box
-        Academy modules and structured learning paths.
-      </p>
-      <a href="https://academy.hackthebox.com/achievement/1345880/15"
-         target="_blank"
-         class="lab-link">
-        View Achievements
-      </a>
     </div>
-
-    <!-- TryHackMe Labs -->
-    <div class="certification-card highlight lab-card">
-      <h3>TryHackMe Labs</h3>
-      <div class="lab-badges grid-container">
-
-        <!-- Each lab as a grid item -->
-        <div class="lab-item">
-          <p>Linux Fundamentals Part 1</p>
-          <a href="https://tryhackme.com/room/linuxfundamentalspart1"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Offensive Security Intro</p>
-          <a href="https://tryhackme.com/room/offensivesecurityintro"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Junior Security Analyst Intro</p>
-          <a href="https://tryhackme.com/room/jrsecanalystintrouxo"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Starting Out in Cyber Sec</p>
-          <a href="https://tryhackme.com/room/startingoutincybersec"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Careers in Cyber</p>
-          <a href="https://tryhackme.com/room/careersincyber"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Crack the Hash</p>
-          <a href="https://tryhackme.com/room/crackthehash"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Traffic Analysis Essentials</p>
-          <a href="https://tryhackme.com/room/trafficanalysisessentials"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Pentesting Fundamentals</p>
-          <a href="https://tryhackme.com/room/pentestingfundamentals"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Dig Dug</p>
-          <a href="https://tryhackme.com/room/digdug"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Defensive Security Intro</p>
-          <a href="https://tryhackme.com/room/defensivesecurityintro"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Active Directory Basics</p>
-          <a href="https://tryhackme.com/room/winadbasics"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Investigating Windows</p>
-          <a href="https://tryhackme.com/room/investigatingwindows"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>DNS in Detail</p>
-          <a href="https://tryhackme.com/room/dnsindetail"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Cyber Kill Chain</p>
-          <a href="https://tryhackme.com/room/cyberkillchainzmt"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Introduction to SIEM</p>
-          <a href="https://tryhackme.com/room/introtosiem"
-             target="_blank" class="lab-link">View Lab</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Hash Cracker Badge</p>
-          <a href="https://tryhackme.com/SIMONNJOROGE/badges/hash-cracker"
-             target="_blank" class="lab-link">View Badge</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Terminaled Badge</p>
-          <a href="https://tryhackme.com/SIMONNJOROGE/badges/terminaled"
-             target="_blank" class="lab-link">View Badge</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Webbed Badge</p>
-          <a href="https://tryhackme.com/SIMONNJOROGE/badges/web-fund"
-             target="_blank" class="lab-link">View Badge</a>
-        </div>
-
-        <div class="lab-item">
-          <p>Security Awareness Badge</p>
-          <a href="https://tryhackme.com/SIMONNJOROGE/badges/security-awareness"
-             target="_blank" class="lab-link">View Badge</a>
-        </div>
-
-      </div>
-    </div>
-
   </div>
 </section>
 <!-- Cybersecurity Labs & Hands-On Training -->
